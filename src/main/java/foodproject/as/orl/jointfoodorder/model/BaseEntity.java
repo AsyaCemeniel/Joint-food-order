@@ -8,9 +8,9 @@ import org.springframework.util.Assert;
 
 import javax.persistence.*;
 
-//@MappedSuperclass
-////  https://stackoverflow.com/a/6084701/548473
-//@Access(AccessType.FIELD)
+@MappedSuperclass
+//  https://stackoverflow.com/a/6084701/548473
+@Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -18,8 +18,8 @@ import javax.persistence.*;
 @ToString
 public abstract class BaseEntity implements Persistable<Integer> {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
 
     // doesn't work for hibernate lazy proxy
@@ -28,7 +28,7 @@ public abstract class BaseEntity implements Persistable<Integer> {
         return id;
     }
 
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public boolean isNew() {
         return id == null;
