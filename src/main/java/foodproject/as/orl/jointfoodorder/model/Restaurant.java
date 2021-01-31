@@ -38,5 +38,13 @@ public class Restaurant extends BaseNamedEntity implements Serializable {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Meal> menu;
 
+    public Restaurant(Integer id, String name, String address, String description, boolean kosher, List<Meal> menu) {
+        super(id,name);
+        this.address = address;
+        this.description = description;
+        this.kosher = kosher;
+        this.menu = menu;
+    }
+
 
 }

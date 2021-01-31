@@ -28,4 +28,11 @@ public class Vote extends BaseEntity {
     @JoinColumn(name = "restaurant_id", nullable = false)
     @JsonBackReference
     private Restaurant restaurant;
+
+    public Vote(Integer id, LocalDate date, User user, Restaurant restaurant) {
+        super(id);
+        this.date = date;
+        this.user = user;
+        this.restaurant = restaurant;
+    }
 }

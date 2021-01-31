@@ -20,4 +20,9 @@ public abstract class BaseNamedEntity extends BaseEntity implements Serializable
     @Column(name = "name", nullable = false)
     protected String name;
 
+    protected BaseNamedEntity(Integer id, String name) {
+        super(id);
+        this.name = name;
+    }
+
 }

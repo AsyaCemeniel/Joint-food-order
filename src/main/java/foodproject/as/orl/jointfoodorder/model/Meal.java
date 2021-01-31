@@ -30,4 +30,11 @@ public class Meal extends BaseNamedEntity {
     @JsonBackReference
     private Restaurant restaurant;
 
+    public Meal(Integer id, String name, String description, String size, Restaurant restaurant) {
+        super(id,name);
+        this.description = description;
+        this.size = size;
+        this.restaurant = restaurant;
+    }
+
 }
